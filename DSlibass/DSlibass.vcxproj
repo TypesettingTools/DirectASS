@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|x64">
+      <Configuration>Profile</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{687CD386-955D-42C7-8A47-4B1CFC56911A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DSlibass</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfAtl>false</UseOfAtl>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfAtl>false</UseOfAtl>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.ax</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.ax</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.ax</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetExt>.ax</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DSLIBASS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\baseclasses\;..\libass\;..\libebml\;..\libmatroska\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <OmitFramePointers>false</OmitFramePointers>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libmatroskad.lib;libebmld.lib;libass_static_debug.lib;libfribidi.a;fontconfigd.lib;libfreetype.a;libenca.a;libiconv.a;libz.a;libgcc.a;strmbasd.lib;winmm.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalLibraryDirectories>..\libass\;..\libebml\Debug\;..\libmatroska\Debug\;..\baseclasses\Debug\</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DSLIBASS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\baseclasses\;..\libass\;..\libebml\;..\libmatroska\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <OmitFramePointers>false</OmitFramePointers>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libmatroskad.lib;libebmld.lib;libass_static_debug.lib;libfribidi.a;fontconfigd.lib;libfreetype.a;libenca.a;libiconv.a;libz.a;libgcc.a;strmbasd.lib;winmm.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalLibraryDirectories>..\libass\;$(OutDir)</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DSLIBASS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\baseclasses\;..\libass\;..\libebml\;..\libmatroska\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GlobalOptimizations>true</GlobalOptimizations>
+      <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+      <UseProcessorExtensions>SSE41</UseProcessorExtensions>
+      <Cpp0xSupport>true</Cpp0xSupport>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;strmbase.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalLibraryDirectories>..\libass\;..\libebml\Release\;..\libmatroska\Release\;..\baseclasses\Release\</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DSLIBASS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\baseclasses\;..\libass\;..\libebml\;..\libmatroska\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GlobalOptimizations>true</GlobalOptimizations>
+      <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+      <UseProcessorExtensions>SSE41</UseProcessorExtensions>
+      <Cpp0xSupport>true</Cpp0xSupport>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;strmbase.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalLibraryDirectories>..\libass\;$(OutDir)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DSLIBASS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\baseclasses\;..\libass\;..\libebml\;..\libmatroska\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GlobalOptimizations>true</GlobalOptimizations>
+      <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+      <UseProcessorExtensions>SSE41</UseProcessorExtensions>
+      <Cpp0xSupport>true</Cpp0xSupport>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass_static.lib;libfribidi.a;fontconfig.lib;libfreetype.a;libenca.a;libiconv.a;libz.a;libgcc.a;strmbase.lib;winmm.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalLibraryDirectories>..\libass\;..\libebml\Release\;..\libmatroska\Release\;..\baseclasses\Release\</AdditionalLibraryDirectories>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DSLIBASS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\baseclasses\;..\libass\;..\libebml\;..\libmatroska\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <GlobalOptimizations>true</GlobalOptimizations>
+      <InterproceduralOptimization>SingleFile</InterproceduralOptimization>
+      <UseProcessorExtensions>SSE41</UseProcessorExtensions>
+      <Cpp0xSupport>true</Cpp0xSupport>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass_static.lib;libfribidi.a;fontconfig.lib;libfreetype.a;libenca.a;libiconv.a;libz.a;libgcc.a;strmbase.lib;winmm.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalLibraryDirectories>..\libass\;$(OutDir)</AdditionalLibraryDirectories>
+      <Profile>true</Profile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="DSlibass.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ASSTrack.h" />
+    <ClInclude Include="DSLAInputPin.h" />
+    <ClInclude Include="DSLARendererProp.h" />
+    <ClInclude Include="DSlibass.h" />
+    <ClInclude Include="dslauids.h" />
+    <ClInclude Include="DSlibassSettings.h" />
+    <ClInclude Include="DSUtils.h" />
+    <ClInclude Include="LibassWrapper.h" />
+    <ClInclude Include="MatroskaParser.h" />
+    <ClInclude Include="registry.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SubInputPin.h" />
+    <ClInclude Include="SubPicRenderer.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ASSTrack.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="DSLAInputPin.cpp" />
+    <ClCompile Include="DSLARendererProp.cpp" />
+    <ClCompile Include="DSlibass.cpp" />
+    <ClCompile Include="LibassWrapper.cpp" />
+    <ClCompile Include="MatroskaParser.cpp" />
+    <ClCompile Include="registry.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SubInputPin.cpp" />
+    <ClCompile Include="SubPicRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DSlibass.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
