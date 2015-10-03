@@ -203,7 +203,7 @@ HRESULT CMatroskaParser::ParseAttachments(vector<MatroskaAttachment> & attachmen
 
 			else if (EbmlId(*e) == EBML_ID(KaxFileData)) {
 				attachment.FileSize = static_cast<KaxFileData *>(e)->GetSize();
-				attachment.FileData = unique_ptr<BYTE[]>(new BYTE[attachment.FileSize]);
+				attachment.FileData = unique_ptr<BYTE>(new BYTE[attachment.FileSize]);
 				memcpy(attachment.FileData.get(), (void *) static_cast<KaxFileData *>(e)->GetBuffer(), attachment.FileSize);
 			}
 		}

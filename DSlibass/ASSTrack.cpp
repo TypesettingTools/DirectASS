@@ -23,11 +23,11 @@
 
 using namespace std;
 
-static inline int lrint (double const x) {
+static inline long lrint (double const x) {
 	int n; 
 	__asm fld qword ptr x; 
 	__asm fistp dword ptr n; 
-	return n;
+	return (long)n;
 }
 
 
