@@ -38,9 +38,6 @@
     <ClInclude Include="ASSTrack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="memcpy_amd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="dslauids.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -86,9 +83,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ASSTrack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="memcpy_amd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MatroskaParser.cpp">
