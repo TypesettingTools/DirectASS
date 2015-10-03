@@ -21,7 +21,6 @@
 #include "DSlibassSettings.h"
 #include "LibassWrapper.h"
 #include "SubPicRenderer.h"
-#include "memcpy_amd.h"
 
 
 #define _r(c)  ((c)>>24)
@@ -168,13 +167,13 @@ void CSubPicRenderer::BuildRegions(ASS_Image * img) {
 			int best_reg_i = -1;
 			int best_reg_j = -1;
 			LONG best_surf = LONG_MAX;
-			
+
 			for(UINT k = 0; k < m_SubPictures.size(); k++) {
 				for(UINT j = 0; j < m_SubPictures.size(); j++) {
 					RECT n = m_SubPictures[k].pos;
 					RectAdd(n, m_SubPictures[j].pos);
 					LONG ds = RectSurface(n) - RectSurface(m_SubPictures[k].pos) - RectSurface(m_SubPictures[j].pos);
-					
+
 					if(ds < best_surf) {
 						best_reg_i = k;
 						best_reg_j = j;
@@ -263,7 +262,7 @@ HRESULT CSubPicRenderer::RenderFrame(BYTE *Buf, ULONGLONG tc, WORD TrackNum) {
 	hr = m_pLibass->ASSRenderFrame(tc, TrackNum, &img, &detect_change);
 	if(FAILED(hr))
 		return hr;
-	
+
 	if(img != NULL) {
 
 		if(detect_change != 0){
@@ -612,7 +611,7 @@ void CSubPicRenderer::BlendYV12(SubPicture& sp) {
 	const UINT srcheight_m2 = ((sp.pos.bottom + 1) >> 1) - (sp.pos.top >> 1);
 	const UINT dst_offset = ((sp.pos.top >> 1) * (stride >> 1)) + (sp.pos.left >> 1);
 	const UINT chr_offset = (sp.pos.top - (sp.pos.top & 1)) * stride + (sp.pos.left - (sp.pos.left & 1));
-	
+
 	dataY += sp.pos.top * stride + sp.pos.left;
 
 	for(i = 0; i < srcheight; i++) {
@@ -702,7 +701,7 @@ void CSubPicRenderer::BlendNV12(SubPicture& sp) {
 	const UINT srcheight_m2 = ((sp.pos.bottom + 1) >> 1) - (sp.pos.top >> 1);
 	const UINT dst_offset = (sp.pos.top >> 1) * stride + (sp.pos.left - (sp.pos.left & 1));
 	const UINT chr_offset = (sp.pos.top - (sp.pos.top & 1)) * stride + (sp.pos.left - (sp.pos.left & 1));
-	
+
 	dataY += sp.pos.top * stride + sp.pos.left;
 
 	for(i = 0; i < srcheight; i++) {
@@ -775,7 +774,7 @@ void CSubPicRenderer::BlendP01(SubPicture& sp) {
 	const UINT srcheight_m2 = ((sp.pos.bottom + 1) >> 1) - (sp.pos.top >> 1);
 	const UINT dst_offset = (sp.pos.top >> 1) * stride + (sp.pos.left - (sp.pos.left & 1));
 	const UINT chr_offset = (sp.pos.top - (sp.pos.top & 1)) * stride + (sp.pos.left - (sp.pos.left & 1));
-	
+
 	dataY += sp.pos.top * stride + sp.pos.left;
 
 	for(i = 0; i < srcheight; i++) {
@@ -840,7 +839,7 @@ HRESULT BitBltRGB(BYTE *pBufIn, BYTE *pBufOut, UINT height, UINT width, UINT str
 		return E_FAIL;
 
 	for(y = 0; y < height; y++) {
-		memcpy_amd(pBufOut, pBufIn, width * bpp);
+		memcpy(pBufOut, pBufIn, width * bpp);
 		pBufIn += strideIn * bpp;
 		pBufOut += strideOut * bpp;
 	}
@@ -858,7 +857,7 @@ HRESULT BitBltRGBWithFlip(BYTE *pBufIn, BYTE *pBufOut, UINT height, UINT width, 
 	pBufIn += strideIn * bpp * (height - 1);
 
 	for(y = 0; y < height; y++) {
-		memcpy_amd(pBufOut, pBufIn, width * bpp);
+		memcpy(pBufOut, pBufIn, width * bpp);
 		pBufIn -= strideIn * bpp;
 		pBufOut += strideOut * bpp;
 	}
@@ -875,14 +874,14 @@ HRESULT BitBltYV12(BYTE *pBufIn, BYTE *pBufOut, UINT height, UINT width, UINT st
 
 	//the Y plane
 	for(y = 0; y < height; y++) {
-		memcpy_amd(pBufOut, pBufIn, width);
+		memcpy(pBufOut, pBufIn, width);
 		pBufIn += strideIn;
 		pBufOut += strideOut;
 	}
 
 	//the V and U planes
 	for(y = 0; y < height; y++) {
-		memcpy_amd(pBufOut, pBufIn, width >> 1);
+		memcpy(pBufOut, pBufIn, width >> 1);
 		pBufIn += ((strideIn + 1) >> 1);
 		pBufOut += ((strideOut + 1) >> 1);
 	}
@@ -900,14 +899,14 @@ HRESULT BitBltNV12(BYTE *pBufIn, BYTE *pBufOut, UINT height, UINT width, UINT st
 
 	//the Y plane
 	for(y = 0; y < height; y++) {
-		memcpy_amd(pBufOut, pBufIn, width);
+		memcpy(pBufOut, pBufIn, width);
 		pBufIn += strideIn;
 		pBufOut += strideOut;
 	}
 
 	//U and V planes
 	for(y = 0; y < (height + 1) >> 1; y++) {
-		memcpy_amd(pBufOut, pBufIn, width);
+		memcpy(pBufOut, pBufIn, width);
 		pBufIn += strideIn;
 		pBufOut += strideOut;
 	}
@@ -924,14 +923,14 @@ HRESULT BitBltP01(WORD *pBufIn, WORD *pBufOut, UINT height, UINT width, UINT str
 
 	//the Y plane
 	for(y = 0; y < height; y++) {
-		memcpy_amd(pBufOut, pBufIn, width << 1);
+		memcpy(pBufOut, pBufIn, width << 1);
 		pBufIn += strideIn;
 		pBufOut += strideOut;
 	}
 
 	//U and V planes
 	for(y = 0; y < (height + 1) >> 1; y++) {
-		memcpy_amd(pBufOut, pBufIn, width << 1);
+		memcpy(pBufOut, pBufIn, width << 1);
 		pBufIn += strideIn;
 		pBufOut += strideOut;
 	}

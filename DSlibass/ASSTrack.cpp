@@ -23,13 +23,6 @@
 
 using namespace std;
 
-static inline long lrint (double const x) {
-	int n; 
-	__asm fld qword ptr x; 
-	__asm fistp dword ptr n; 
-	return (long)n;
-}
-
 
 CASSTrack::CASSTrack(ASS_Library *lib) :
 	m_cType(ASS_EMB_TRACK),
@@ -49,7 +42,7 @@ CASSTrack::CASSTrack(ASS_Library *lib, std::wstring filename) :
 
 	string input;
 
-	inputfile.seekg(0, std::ios::end);   
+	inputfile.seekg(0, std::ios::end);
 	input.reserve(inputfile.tellg());
 	inputfile.seekg(0, std::ios::beg);
 
@@ -87,7 +80,7 @@ void CASSTrack::parseSRT(std::wstring filename) {
 	_wfopen_s (&fh, filename.c_str(), L"r");
 
     if (fh) {
-        
+
 
     sprintf_s (buf, BUFSIZ, "[V4+ Styles]\nStyle: Default,%s,20,&H1EFFFFFF,&H00FFFFFF,"
              "&H29000000,&H3C000000,0,0,0,0,100,100,0,0,1,1,1.2,2,10,10,"
@@ -106,8 +99,8 @@ void CASSTrack::parseSRT(std::wstring filename) {
             sprintf_s (buf, BUFSIZ - 1, "Dialogue: 0,%d:%02d:%02d.%02d,%d:%02d:%02d.%02d,"
                      "Default,,0,0,0,,{\\blur0.7}",
                      start[0], start[1], start[2],
-                     (int) lrint ( (double) start[3] / 10.0), end[0], end[1],
-                     end[2], (int) lrint ( (double) end[3] / 10.0));
+                     (int) (start[3] / 10.0), end[0], end[1],
+                     end[2], (int) (end[3] / 10.0));
             isn = 0;
 
             while (fgets (l, BUFSIZ - 1, fh) != NULL) {
