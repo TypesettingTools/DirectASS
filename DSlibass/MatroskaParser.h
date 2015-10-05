@@ -19,7 +19,7 @@
 
 #pragma once
 
-#include "ebml/WinIOCallback.h"
+#include "src/platform/win32/WinIOCallback.h"
 
 
 using namespace LIBEBML_NAMESPACE;

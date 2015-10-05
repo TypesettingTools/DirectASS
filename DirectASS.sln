@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DSlibass", "DSlibass\DSlibass.vcxproj", "{687CD386-955D-42C7-8A47-4B1CFC56911A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectASS", "DSlibass\DirectASS.vcxproj", "{687CD386-955D-42C7-8A47-4B1CFC56911A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{168C0F0D-9975-4D24-885C-87A9B018617E} = {168C0F0D-9975-4D24-885C-87A9B018617E}
 		{817DD354-40BB-5065-F000-886ED3BFA54E} = {817DD354-40BB-5065-F000-886ED3BFA54E}
@@ -12,9 +12,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DSlibass", "DSlibass\DSliba
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "baseclasses", "baseclasses\baseclasses.vcxproj", "{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libebml", "libebml\libebml.vcxproj", "{168C0F0D-9975-4D24-885C-87A9B018617E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libebml", "msvs\libebml.vcxproj", "{168C0F0D-9975-4D24-885C-87A9B018617E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmatroska", "libmatroska\libmatroska.vcxproj", "{817DD354-40BB-5065-F000-886ED3BFA54E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmatroska", "msvs\libmatroska.vcxproj", "{817DD354-40BB-5065-F000-886ED3BFA54E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{168C0F0D-9975-4D24-885C-87A9B018617E} = {168C0F0D-9975-4D24-885C-87A9B018617E}
 	EndProjectSection

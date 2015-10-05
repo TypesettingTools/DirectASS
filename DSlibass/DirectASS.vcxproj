@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -30,6 +30,8 @@
     <ProjectGuid>{687CD386-955D-42C7-8A47-4B1CFC56911A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>DSlibass</RootNamespace>
+    <ProjectName>DirectASS</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -102,27 +104,39 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(IncludePath)</IncludePath>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(IncludePath)</IncludePath>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.ax</TargetExt>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.ax</TargetExt>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.ax</TargetExt>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.ax</TargetExt>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(Configuration)\$(Platform)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -136,17 +150,18 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
       <OmitFramePointers>false</OmitFramePointers>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableLanguageExtensions>false</DisableLanguageExtensions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libmatroskad.lib;libebmld.lib;libass_static_debug.lib;libfribidi.a;fontconfigd.lib;libfreetype.a;libenca.a;libiconv.a;libz.a;libgcc.a;strmbasd.lib;winmm.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;baseclasses.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <AdditionalLibraryDirectories>..\libass\;..\libebml\Debug\;..\libmatroska\Debug\;..\baseclasses\Debug\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\libass\;$(SolutionDir)$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
@@ -164,17 +179,18 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
       <OmitFramePointers>false</OmitFramePointers>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <DisableLanguageExtensions>false</DisableLanguageExtensions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libmatroskad.lib;libebmld.lib;libass_static_debug.lib;libfribidi.a;fontconfigd.lib;libfreetype.a;libenca.a;libiconv.a;libz.a;libgcc.a;strmbasd.lib;winmm.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;baseclasses.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <AdditionalLibraryDirectories>..\libass\;$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\libass\;$(SolutionDir)$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
@@ -205,12 +221,13 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;strmbase.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;baseclasses.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <AdditionalLibraryDirectories>..\libass\;..\libebml\Release\;..\libmatroska\Release\;..\baseclasses\Release\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\libass\;$(SolutionDir)$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
@@ -241,12 +258,13 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;strmbase.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;baseclasses.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <AdditionalLibraryDirectories>..\libass\;$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\libass\;$(SolutionDir)$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
@@ -277,12 +295,13 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass_static.lib;libfribidi.a;fontconfig.lib;libfreetype.a;libenca.a;libiconv.a;libz.a;libgcc.a;strmbase.lib;winmm.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;baseclasses.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <AdditionalLibraryDirectories>..\libass\;..\libebml\Release\;..\libmatroska\Release\;..\baseclasses\Release\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\libass\;$(SolutionDir)$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
       <Profile>true</Profile>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
@@ -310,12 +329,13 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass_static.lib;libfribidi.a;fontconfig.lib;libfreetype.a;libenca.a;libiconv.a;libz.a;libgcc.a;strmbase.lib;winmm.lib;shlwapi.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libmatroska.lib;libebml.lib;libass.lib;fribidi.lib;fontconfig.lib;freetype2.lib;baseclasses.lib;winmm.lib;shlwapi.lib;Comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>DSlibass.def</ModuleDefinitionFile>
       <EntryPointSymbol>
       </EntryPointSymbol>
-      <AdditionalLibraryDirectories>..\libass\;$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\libass\;$(SolutionDir)$(Configuration)\$(Platform)</AdditionalLibraryDirectories>
       <Profile>true</Profile>
+      <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
